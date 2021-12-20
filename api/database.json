@@ -1,0 +1,31 @@
+{
+    "users": [
+        {
+            "email": "jonahamoore@gmail.com",
+            "name": "Jonah Moore",
+            "id": 1
+        }
+    ],
+    "review": [
+        {
+            "id": 1,
+            "userId": 1,
+            "name": "Mission Bells",
+            "store": "The Chocolate Moose",
+            "date": "12/14/2021",
+            "temp": "196 degrees farenheit",
+            "coffeeType": "datk roast",
+            "brewing_method": "aeropress",
+            "rating": 75
+        }
+    ],
+    "equip": [
+        {
+            "id": 1,
+            "userId": 1,
+            "brand": "aeropress",
+            "method": "aeropress, inverted method",
+            "tips": "always use filtered water for brewing, you can definitely taste the difference"
+        }
+    ]
+}

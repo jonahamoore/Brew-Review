@@ -1,17 +1,34 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import { BrowserRouter as Router } from "react-router-dom"
+import { BrewReview } from './components/BrewReview'
+import { Grommet } from 'grommet';
+// import { withStyles } from '@material-ui/core/styles';
+
+
+
+const theme = {
+  global: {
+    font: {
+      family: 'Roboto',
+      size: '14px',
+      height: '20px',
+    },
+  },
+};
+
+<Grommet theme={theme}></Grommet>
+
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <Router>
+    <Grommet>
+      <BrewReview />
+    </Grommet>
+    </Router>
   </React.StrictMode>,
   document.getElementById('root')
-);
+)
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
