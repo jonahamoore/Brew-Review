@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-// import NavBar from "./nav/NavBar";
-import {ApplicationViews} from "../ApplicationViews";
-import { Routes, Route, Navigate} from "react-router";
+import NavBar from "./nav/NavBar";
+import {ApplicationViews} from "./ApplicationViews";
+import { Routes, Route, Navigate} from "react-router-dom";
 import { Login } from "./auth/Login";
 import { Register } from "./auth/Register";
 // import "./BrewReview.css";
@@ -11,10 +11,10 @@ export const BrewReview = () => {
 
   const changeState = (bool) => setLoggedin(bool);
   
-  if (localStorage.getItem("brew_user")) {
+  if (localStorage.getItem("brew_User")) {
     return (
       <>
-        {/* <NavBar /> */}
+        <NavBar />
         <ApplicationViews />
       </>
     );

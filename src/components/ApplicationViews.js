@@ -1,9 +1,9 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
-import { CoffeeList } from "./components/coffee/CoffeeList"
-import { CoffeeForm } from "./components/coffee/CoffeeForm"
-import { CoffeeDetails } from "./components/coffee/CoffeeDetails"
-import { CoffeeProvider } from "./components/coffee/CoffeeProvider"
+import { CoffeeList } from "./coffee/CoffeeList"
+import { CoffeeForm } from "./coffee/CoffeeForm"
+import { CoffeeDetails } from "./coffee/CoffeeDetails"
+import { CoffeeProvider } from "./coffee/CoffeeProvider"
 
 
 

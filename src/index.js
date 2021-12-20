@@ -8,25 +8,23 @@ import { Grommet } from 'grommet';
 
 
 
-const theme = {
-  global: {
-    font: {
-      family: 'Roboto',
-      size: '14px',
-      height: '20px',
-    },
-  },
-};
+// const theme = {
+//   global: {
+//     font: {
+//       family: 'Roboto',
+//       size: '14px',
+//       height: '20px',
+//     },
+//   },
+// };
 
-<Grommet theme={theme}></Grommet>
+// <Grommet theme={theme}></Grommet>
 
 
 ReactDOM.render(
   <React.StrictMode>
-    <Router>
-    <Grommet>
-      <BrewReview />
-    </Grommet>
+    <Router> 
+        <BrewReview />
     </Router>
   </React.StrictMode>,
   document.getElementById('root')
