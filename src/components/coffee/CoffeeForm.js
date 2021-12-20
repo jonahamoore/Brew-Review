@@ -15,6 +15,8 @@ export const CoffeeForm = () => {
             coffeetype: "",
             brewing_method: "",
             rating: ""
-        }
-    )
+        })
+
+    const { coffeeId } = useParams();
+    
 }
