@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useState } from "react"
 import { CoffeeContext } from "./CoffeeProvider"
 import { useNavigate, useParams }  from 'react-router-dom';
+import { TypeContext } from "../../typeofcoffee/TypeOfCoffeeProvider";
 import { grommet } from "grommet";
 import { Box, Button, DropButton, Heading, Text } from 'grommet';
 import { Close } from 'grommet-icons';
@@ -8,13 +9,14 @@ import { Close } from 'grommet-icons';
 
 export const CoffeeForm = () => {
     const [ addCoffee, updateCoffee, getCoffeeById] = useContext(CoffeeContext)
+    const { type, getType } = useContext(TypeContext)
 
     const [coffee, setCoffee] = useState(
         {
             userId: +localStorage.getItem("brew_User"),
             name: "",
             brand: "",
-            // typeOfCoffee: "",
+            typeOfCoffee: "",
             // flavor: "",
             // actorRating: "",
             // url: "",
@@ -22,7 +24,9 @@ export const CoffeeForm = () => {
         })
 
     const { coffeeId } = useParams();
+
     const navigate = useNavigate();
+
     const [isLoading, setIsLoading] = useState(true);
 
     const handleControlledInputChange = (event) => {
@@ -46,8 +50,8 @@ export const CoffeeForm = () => {
                     name: coffee.name,
                     brand: coffee.brand,
                     typeOfCoffeeId: parseInt(coffee.typeOfCoffeeId),
-                    flavorId: parseInt(coffee.flavorId),
-                    actorRatingId: parseInt(coffee.actorRatingId),
+                    // flavorId: parseInt(coffee.flavorId),
+                    // actorRatingId: parseInt(coffee.actorRatingId),
                     url: coffee.url,
                     description: coffee.description
                     
@@ -59,8 +63,8 @@ export const CoffeeForm = () => {
                     name: coffee.name,
                     brand: coffee.brand,
                     typeOfCoffeeId: parseInt(coffee.typeOfCoffeeId),
-                    flavorId: parseInt(coffee.flavorId),
-                    actorRatingId: parseInt(coffee.actorRatingId),
+                    // flavorId: parseInt(coffee.flavorId),
+                    // actorRatingId: parseInt(coffee.actorRatingId),
                     url: coffee.url,
                     description: coffee.description
                 })
@@ -70,6 +74,7 @@ export const CoffeeForm = () => {
     }
 
     useEffect(() => {
+        getType().then(() => {
         if (coffeeId){
             getCoffeeById(coffeeId)
             .then(coffee => {
@@ -79,6 +84,7 @@ export const CoffeeForm = () => {
         } else {
             setIsLoading(false)
         }
+        })
     }, [])
 
     return (
@@ -90,6 +96,20 @@ export const CoffeeForm = () => {
                     <input type="text" name="brand" onChange={handleControlledInputChange} required autoFocus className="form-control" placeholder="Brand of coffee" defaultValue={coffee.brand}/>
                 </div>
             </fieldset>
+
+            <fieldset>
+          <div className="form-group">
+            <label htmlFor="typesofcoffee"> Coffee Roast: </label>
+            <select value={coffee.typeOfCoffeeId} name="typeOfCoffeeId" className="form-control" onChange={handleControlledInputChange}>
+              <option value="0">Select a Roast</option>
+              {type.map(t => (
+                <option key={t.id} value={t.id}>
+                  {t.type}
+                </option>
+              ))}
+            </select>
+          </div>
+        </fieldset>
 
             <fieldset>
                 <div className="form-group">

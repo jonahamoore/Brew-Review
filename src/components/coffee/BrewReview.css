@@ -1,5 +1,14 @@
 body{
     font-family: Georgia, 'Times New Roman', Times, serif;
-    color: #E3D7CA;
-    background-color: #481D24;
+    color: #481D24;
+    background-color: #E3D7CA;
+}
+
+.headerText{
+    font-size: 75px;
+    text-align: center;
+    margin-top: 0%;
+    margin-left: 0%;
+    margin-right: 0%;
+    margin-bottom: 0%;  
 }

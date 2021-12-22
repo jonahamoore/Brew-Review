@@ -5,6 +5,7 @@ import { Routes, Route, Navigate} from "react-router-dom";
 import { Login } from "./auth/Login";
 import { Register } from "./auth/Register";
 // import "./BrewReview.css";
+import { BrewReviewHeader } from "../header/Header";
 
 export const BrewReview = () => {
   const [loggedin, setLoggedin] = useState(false);
@@ -15,7 +16,9 @@ export const BrewReview = () => {
     return (
       <>
         {/* <NavBar /> */}
+        <BrewReviewHeader />
         <ApplicationViews />
+        
       </>
     );
   } else {
