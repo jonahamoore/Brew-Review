@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import NavBar from "./nav/NavBar";
+// import NavBar from "./nav/NavBar";
 import {ApplicationViews} from "./ApplicationViews";
 import { Routes, Route, Navigate} from "react-router-dom";
 import { Login } from "./auth/Login";
@@ -14,7 +14,7 @@ export const BrewReview = () => {
   if (localStorage.getItem("brew_User")) {
     return (
       <>
-        <NavBar />
+        {/* <NavBar /> */}
         <ApplicationViews />
       </>
     );

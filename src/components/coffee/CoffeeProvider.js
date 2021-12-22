@@ -1,6 +1,6 @@
 import React, { useState, createContext } from "react"
 
-export const CoffeeContext = createContext
+export const CoffeeContext = createContext()
 
 export const CoffeeProvider = (props) => {
 
@@ -35,7 +35,7 @@ export const CoffeeProvider = (props) => {
     }
 
     const getCoffeeById = (id) => {
-        return fetch(`http://localhost:8088/coffee/${id}?`)
+        return fetch(`http://localhost:8088/coffee/${id}?_expand=typeOfCoffee&_expand=flavor&_expand=actorRating`)
             .then(res => res.json())
     }
 

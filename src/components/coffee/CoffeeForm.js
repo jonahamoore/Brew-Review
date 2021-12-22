@@ -1,6 +1,10 @@
 import React, { useContext, useEffect, useState } from "react"
 import { CoffeeContext } from "./CoffeeProvider"
 import { useNavigate, useParams }  from 'react-router-dom';
+import { grommet } from "grommet";
+import { Box, Button, DropButton, Heading, Text } from 'grommet';
+import { Close } from 'grommet-icons';
+
 
 export const CoffeeForm = () => {
     const [ addCoffee, updateCoffee, getCoffeeById] = useContext(CoffeeContext)
@@ -9,12 +13,12 @@ export const CoffeeForm = () => {
         {
             userId: +localStorage.getItem("brew_User"),
             name: "",
-            store: "",
-            date: "",
-            temp: "",
-            coffeetype: "",
-            brewing_method: "",
-            rating: ""
+            brand: "",
+            // typeOfCoffee: "",
+            // flavor: "",
+            // actorRating: "",
+            // url: "",
+            description: "",
         })
 
     const { coffeeId } = useParams();
@@ -40,24 +44,25 @@ export const CoffeeForm = () => {
                     userId: +localStorage.getItem("brew_User"),
                     id: +coffee.id,
                     name: coffee.name,
-                    store: coffee.store,
-                    date: coffee.date,
-                    temp: coffee.temp,
-                    coffeetype: coffee.coffeetype,
-                    brewing_method: coffee.brewing_method,
-                    rating: coffee.rating
+                    brand: coffee.brand,
+                    typeOfCoffeeId: parseInt(coffee.typeOfCoffeeId),
+                    flavorId: parseInt(coffee.flavorId),
+                    actorRatingId: parseInt(coffee.actorRatingId),
+                    url: coffee.url,
+                    description: coffee.description
+                    
                 })
                 .then(() => navigate(`/coffee/detail/${coffee.id}`))
             } else {
                 addCoffee ({
                     userId: +localStorage.getItem("brew_User"),
                     name: coffee.name,
-                    store: coffee.store,
-                    date: coffee.date,
-                    temp: coffee.temp,
-                    coffeetype: coffee.coffeetype,
-                    brewing_method: coffee.brewing_method,
-                    rating: coffee.rating
+                    brand: coffee.brand,
+                    typeOfCoffeeId: parseInt(coffee.typeOfCoffeeId),
+                    flavorId: parseInt(coffee.flavorId),
+                    actorRatingId: parseInt(coffee.actorRatingId),
+                    url: coffee.url,
+                    description: coffee.description
                 })
                 .then(() => navigate("/coffee"))
             }
@@ -81,17 +86,36 @@ export const CoffeeForm = () => {
           <h2 className="coffee__title">New Coffee Review</h2>
             <fieldset>
                 <div className="form-group">
-                    <label htmlFor="coffeeName">Coffee name:</label>
-                    <input type="text" name="name" onChange={handleControlledInputChange} required autoFocus className="form-control" placeholder="Name of coffee" defaultValue={coffee.name}/>
+                    <label htmlFor="coffeeBrand">Coffee brand:</label>
+                    <input type="text" name="brand" onChange={handleControlledInputChange} required autoFocus className="form-control" placeholder="Brand of coffee" defaultValue={coffee.brand}/>
                 </div>
             </fieldset>
 
             <fieldset>
-            <div className="form-group">
-              <label htmlFor="store">Purchase location:</label>
-              <input type="text" name="store" onChange={handleControlledInputChange} className="form-control" placeholder="Enter location of place purchased from here" defaultValue={coffee.store}/>
-              </div>
+                <div className="form-group">
+                    <label htmlFor="coffeeName">Coffee name:</label>
+                    <input type="text" name="name" onChange={handleControlledInputChange} required autoFocus className="form-control" placeholder="Name of coffee" defaultValue={coffee.name}/>
+                </div>
             </fieldset>
+            
+        
+
+            <fieldset>
+                <div className="form-group">
+                    <label htmlFor="coffeeUrl">Coffee URL:</label>
+                    <input type="text" name="url" onChange={handleControlledInputChange} required autoFocus className="form-control" placeholder="picture of actor url here" defaultValue={coffee.url}/>
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <div className="form-group">
+                    <label htmlFor="coffeeDescription">Coffee description:</label>
+                    <input type="text" name="description" onChange={handleControlledInputChange} required autoFocus className="form-control" placeholder="make your coffee to actor case comparison here" defaultValue={coffee.description}/>
+                </div>
+            </fieldset>
+
+
+
           <button primary label="Save Coffee Review"className="formbutton"
             disabled={isLoading}
             onClick={event => {

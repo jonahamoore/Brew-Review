@@ -1,0 +1,8 @@
+do i need providers for each foreign key such as "flavorId": 1,
+            "typeOfCoffeeId": 1,
+            "actorRatingId": 1,
+how to expand location multiple api things
+
+coffee.sort((a,b) => new Date(b.date) - new Date(a.date)).map(coffee => {
+                return <CoffeeCard key={coffee.id} coffee={coffee}/>
+              })

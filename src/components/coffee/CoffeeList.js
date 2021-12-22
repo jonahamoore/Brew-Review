@@ -2,6 +2,7 @@ import React, { useContext, useEffect } from "react";
 import { CoffeeContext } from "./CoffeeProvider";
 import { CoffeeCard } from "./CoffeeCard";
 import { useNavigate } from "react-router-dom"
+import { grommet, Button, Box } from "grommet";
 
 export const CoffeeList = () => {
     const {coffee, getCoffee} = useContext(CoffeeContext)
@@ -16,11 +17,10 @@ export const CoffeeList = () => {
         <>
           <h1 className="Coffee-Title">Coffee Review</h1>
       
-          <button onClick={() => navigate("/coffee/create")}>
-                      New Coffee Review
-                  </button>
+          <Button color="#E3D7CA" label="New Coffee Review" onClick={() => navigate("/coffee/create")}>
+                  </Button>
           <div className="coffee">
-            { coffee.sort((a,b) => new Date(b.date) - new Date(a.date)).map(coffee => {
+            { coffee.map(coffee => {
                 return <CoffeeCard key={coffee.id} coffee={coffee}/>
               })
             }

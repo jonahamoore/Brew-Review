@@ -1,31 +1,67 @@
 {
-    "users": [
-        {
-            "email": "jonahamoore@gmail.com",
-            "name": "Jonah Moore",
-            "id": 1
-        }
-    ],
-    "review": [
-        {
-            "id": 1,
-            "userId": 1,
-            "name": "Mission Bells",
-            "store": "The Chocolate Moose",
-            "date": "12/14/2021",
-            "temp": "196 degrees farenheit",
-            "coffeeType": "datk roast",
-            "brewing_method": "aeropress",
-            "rating": 75
-        }
-    ],
-    "equip": [
-        {
-            "id": 1,
-            "userId": 1,
-            "brand": "aeropress",
-            "method": "aeropress, inverted method",
-            "tips": "always use filtered water for brewing, you can definitely taste the difference"
-        }
-    ]
+  "users": [
+    {
+      "email": "jonahamoore@gmail.com",
+      "name": "Jonah Moore",
+      "id": 1
+    }
+  ],
+  "coffee": [
+    {
+      "id": 1,
+      "userId": 1,
+      "brand": "The Chocolate Moose",
+      "name": "Mission Bells",
+      "flavorId": 1,
+      "typeOfCoffeeId": 1,
+      "actorRatingId": 1,
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/Reuni%C3%A3o_com_o_ator_norte-americano_Keanu_Reeves_%2846806576944%29_%28cropped%29.jpg/220px-Reuni%C3%A3o_com_o_ator_norte-americano_Keanu_Reeves_%2846806576944%29_%28cropped%29.jpg",
+      "description": "pretty good"
+    },
+    {
+        "id": 2,
+        "userId": 1,
+        "brand": "Folgers",
+        "name": "Folgers 1850 Pioneer Blend",
+        "flavorId": 2,
+        "typeOfCoffeeId": 2,
+        "actorRatingId": 2,
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Karl_Urban_by_Gage_Skidmore_2.jpg/220px-Karl_Urban_by_Gage_Skidmore_2.jpg",
+        "description": "underrated, actually good and you don't realize it until you think about it" 
+    }
+  ],
+  "typeOfCoffee": [
+    {
+      "id": 1,
+      "type": "medium roast"
+    },
+    {
+        "id": 2,
+        "type": "light roast"
+    },
+    {
+        "id": 3,
+        "type": "dark roast"
+    }
+  ],
+  "flavor": [
+    {
+      "id": 1,
+      "taste_notes": "woody"
+    },
+    {
+        "id": 2,
+        "taste_notes": "chocolaty"
+    }
+  ],
+  "actorRating": [
+    {
+      "id": 1,
+      "actorName": "Keanu Reeves"
+    },
+    {
+        "id": 2,
+        "actorName": "Karl Urban"
+    }
+  ]
 }
