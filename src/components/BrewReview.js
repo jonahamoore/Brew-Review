@@ -1,11 +1,12 @@
 import React, { useState } from "react";
-// import NavBar from "./nav/NavBar";
 import {ApplicationViews} from "./ApplicationViews";
 import { Routes, Route, Navigate} from "react-router-dom";
 import { Login } from "./auth/Login";
 import { Register } from "./auth/Register";
 // import "./BrewReview.css";
 import { BrewReviewHeader } from "../header/Header";
+import { CollapsableNav } from "./nav/NavBar"
+// import { CoffeeDropdown } from "./coffee/CoffeeDropdown";
 
 export const BrewReview = () => {
   const [loggedin, setLoggedin] = useState(false);
@@ -15,8 +16,10 @@ export const BrewReview = () => {
   if (localStorage.getItem("brew_User")) {
     return (
       <>
-        {/* <NavBar /> */}
+
         <BrewReviewHeader />
+        <CollapsableNav />
+        {/* <CoffeeDropdown /> */}
         <ApplicationViews />
         
       </>

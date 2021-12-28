@@ -7,7 +7,7 @@ export const CoffeeProvider = (props) => {
     const [coffee, setCoffee] = useState([])
 
     const getCoffee = () => {
-        return fetch("http://localhost:8088/coffee")
+        return fetch("http://localhost:8088/coffee?_expand=coffeeTypes&_expand=flavors&_expand=actorRatings")
         .then(res => res.json())
         .then(setCoffee)
     }
@@ -35,7 +35,7 @@ export const CoffeeProvider = (props) => {
     }
 
     const getCoffeeById = (id) => {
-        return fetch(`http://localhost:8088/coffee/${id}?_expand=typeOfCoffee&_expand=flavor&_expand=actorRating`)
+        return fetch(`http://localhost:8088/coffee/${id}?_expand=coffeeTypes&_expand=flavors&_expand=actorRatings`)
             .then(res => res.json())
     }
 

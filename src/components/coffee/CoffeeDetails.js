@@ -32,14 +32,14 @@ export const CoffeeDetails = () => {
             <section className="Coffee">
               <h3 className="coffee_brand">{coffee.brand}</h3>
               <div className="coffee_name"> Name: {coffee.name}</div>
-              <div className="coffee_type">Type of Coffee: {coffee.typeOfCoffee?.type}</div>
-              <div className="coffee_flavor"> Flavor: {coffee.flavor?.taste_notes}</div>
-              <div className="actorRating"> Actor comparison: {coffee.actorRating?.name}</div>
-              <Image src="{coffee.url}" />
+              <div className="coffee_type">Type of Coffee: {coffee.coffeeTypes?.type}</div>
+              <div className="coffee_flavor"> Flavor: {coffee.flavors?.taste_notes}</div>
+              <div className="actorRating"> Actor comparison: {coffee.actorRatings?.name}</div>
+              <div className="actorImages"><img src={coffee.actorRatings?.url} alt="Keanu Reeves" height="100px"/></div>
               <div className="coffee_description">{coffee.description}</div>
               <Button color="#704E33" label="Delete Coffee Review"onClick={coffeeDelete}></Button>
               <Button color="#704E33" label="Edit" onClick={() => {navigate(`/coffee/edit/${coffee.id}`)}}></Button>
             </section>
           )
         }
-        // <div className="url"> {coffee.url}</div>
+        

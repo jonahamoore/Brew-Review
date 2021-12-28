@@ -8,60 +8,60 @@
   ],
   "coffee": [
     {
-      "id": 1,
       "userId": 1,
-      "brand": "The Chocolate Moose",
+      "id": 1,
       "name": "Mission Bells",
-      "flavorId": 1,
-      "typeOfCoffeeId": 1,
-      "actorRatingId": 1,
-      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/Reuni%C3%A3o_com_o_ator_norte-americano_Keanu_Reeves_%2846806576944%29_%28cropped%29.jpg/220px-Reuni%C3%A3o_com_o_ator_norte-americano_Keanu_Reeves_%2846806576944%29_%28cropped%29.jpg",
-      "description": "pretty good"
+      "brand": "The Chocolate Moose",
+      "coffeeTypesId": 1,
+      "flavorsId": 1,
+      "actorRatingsId": 1,
+      "description": "it's solid, not the best thing ever but it's there when you need it and doesn't disappoint in what it does. "
     },
     {
-        "id": 2,
-        "userId": 1,
-        "brand": "Folgers",
-        "name": "Folgers 1850 Pioneer Blend",
-        "flavorId": 2,
-        "typeOfCoffeeId": 2,
-        "actorRatingId": 2,
-        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Karl_Urban_by_Gage_Skidmore_2.jpg/220px-Karl_Urban_by_Gage_Skidmore_2.jpg",
-        "description": "underrated, actually good and you don't realize it until you think about it" 
+      "id": 2,
+      "userId": 1,
+      "brand": "Folgers",
+      "name": "Folgers 1850 Pioneer Blend",
+      "flavorsId": 2,
+      "coffeeTypesId": 2,
+      "actorRatingsId": 2,
+      "description": "underrated, actually good and you don't realize it until you think about it"
     }
   ],
-  "typeOfCoffee": [
+  "coffeeTypes": [
     {
       "id": 1,
-      "type": "medium roast"
+      "type": "Medium Roast"
     },
     {
-        "id": 2,
-        "type": "light roast"
+      "id": 2,
+      "type": "Light Roast"
     },
     {
-        "id": 3,
-        "type": "dark roast"
+      "id": 3,
+      "type": "Dark Roast"
     }
   ],
-  "flavor": [
+  "flavors": [
     {
       "id": 1,
-      "taste_notes": "woody"
+      "taste_notes": "Woody"
     },
     {
-        "id": 2,
-        "taste_notes": "chocolaty"
+      "id": 2,
+      "taste_notes": "Chocolaty"
     }
   ],
-  "actorRating": [
+  "actorRatings": [
     {
       "id": 1,
-      "actorName": "Keanu Reeves"
+      "actorName": "Keanu Reeves",
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/Reuni%C3%A3o_com_o_ator_norte-americano_Keanu_Reeves_%2846806576944%29_%28cropped%29.jpg/220px-Reuni%C3%A3o_com_o_ator_norte-americano_Keanu_Reeves_%2846806576944%29_%28cropped%29.jpg"
     },
     {
-        "id": 2,
-        "actorName": "Karl Urban"
+      "id": 2,
+      "actorName": "Karl Urban",
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Karl_Urban_by_Gage_Skidmore_2.jpg/220px-Karl_Urban_by_Gage_Skidmore_2.jpg"
     }
   ]
 }

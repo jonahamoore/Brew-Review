@@ -3,15 +3,13 @@ import { CoffeeContext } from "./CoffeeProvider";
 import { CoffeeCard } from "./CoffeeCard";
 import { useNavigate } from "react-router-dom"
 import { grommet, Button, Box } from "grommet";
-import { TypeContext } from "../../typeofcoffee/TypeOfCoffeeProvider";
+
 
 export const CoffeeList = () => {
     const {coffee, getCoffee} = useContext(CoffeeContext)
-    const { type, getType } = useContext(TypeContext)
 
     useEffect(() => {
-        getType()
-        .then(getCoffee)
+      getCoffee()
     }, [])
 
     const navigate = useNavigate();
@@ -24,8 +22,7 @@ export const CoffeeList = () => {
                   </Button>
           <div className="coffee">
             { coffee.map(coffee => {
-                const roasts = type.find(t => t.id === +coffee.typeOfCoffeeId)
-                return <CoffeeCard key={coffee.id} coffee={coffee} type={roasts}/> 
+                return <CoffeeCard key={coffee.id} coffee={coffee} /> 
               })
             }
           </div>
