@@ -1,0 +1,16 @@
+useEffect(() => {
+      if (searchTerms !== "") 
+      {
+        const subset = coffee.filter(coffee => coffee.name.toLowerCase().includes(searchTerms.toLowerCase()))
+        setFiltered(subset)
+      }
+      else if(searchTerms !== "")
+      {
+          const secondSubset = coffee.filter(coffee => coffee.brand.toLowerCase().includes(searchTerms.toLowerCase()))
+          setFiltered(secondSubset)
+      }
+      else 
+      {
+        setFiltered(coffee)
+      }
+    }, [searchTerms, coffee])

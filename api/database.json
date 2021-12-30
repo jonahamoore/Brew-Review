@@ -1,0 +1,102 @@
+{
+  "users": [
+    {
+      "email": "jonahamoore@gmail.com",
+      "name": "Jonah Moore",
+      "id": 1
+    }
+  ],
+  "coffee": [
+    {
+      "userId": 1,
+      "id": 1,
+      "name": "Mission Bells",
+      "brand": "The Chocolate Moose",
+      "coffeeTypesId": 1,
+      "flavorsId": 1,
+      "actorRatingsId": 1,
+      "description": "It's efficient, not the best thing ever but it's there when you need it and doesn't disappoint in what it does. "
+    },
+    {
+      "userId": 1,
+      "id": 3,
+      "name": "Sonder",
+      "brand": "Metropolis Coffee Company",
+      "coffeeTypesId": 3,
+      "flavorsId": 3,
+      "actorRatingsId": 3,
+      "description": "Dreadful, nobody likes, truly an insult to anyone that encounters it. I mean it was free from an Airbnb, but much like Steven Seagal's movies, not worth your time."
+    },
+    {
+      "userId": 1,
+      "name": "Midnight Oil",
+      "brand": "Sugar Creek Coffee Roasters",
+      "coffeeTypesId": 3,
+      "flavorsId": 3,
+      "actorRatingsId": 4,
+      "description": "Classic, top notch, top tier, always delivers. Like Tom Hanks if you don't like this coffee, then you probably just don't like any coffee. Stick to tea, that's a whole other discussion.",
+      "id": 4
+    }
+  ],
+  "coffeeTypes": [
+    {
+      "id": 1,
+      "type": "Medium Roast"
+    },
+    {
+      "id": 2,
+      "type": "Light Roast"
+    },
+    {
+      "id": 3,
+      "type": "Dark Roast"
+    }
+  ],
+  "flavors": [
+    {
+      "id": 1,
+      "taste_notes": "Woody"
+    },
+    {
+      "id": 2,
+      "taste_notes": "Chocolaty"
+    },
+    {
+      "id": 3,
+      "taste_notes": "Earthy"
+    },
+    {
+      "id": 4,
+      "taste_notes": "Fruity"
+    },
+    {
+      "id": 5,
+      "taste_notes": "Nutty"
+    }
+  ],
+  "actorRatings": [
+    {
+      "id": 1,
+      "actorName": "Keanu Reeves",
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/Reuni%C3%A3o_com_o_ator_norte-americano_Keanu_Reeves_%2846806576944%29_%28cropped%29.jpg/220px-Reuni%C3%A3o_com_o_ator_norte-americano_Keanu_Reeves_%2846806576944%29_%28cropped%29.jpg"
+    },
+    {
+      "id": 2,
+      "actorName": "Karl Urban",
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Karl_Urban_by_Gage_Skidmore_2.jpg/220px-Karl_Urban_by_Gage_Skidmore_2.jpg"
+    },
+    {
+      "id": 3,
+      "actorName": "Steven Seagal",
+      "url": "https://upload.wikimedia.org/wikipedia/commons/d/d9/Steven_Seagal_November_2016.jpg"
+    },
+    {
+      "id": 4,
+      "actorName": "Tom Hanks",
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Tom_Hanks_TIFF_2019.jpg/1024px-Tom_Hanks_TIFF_2019.jpg"
+    }
+  ],
+  "coffeeQuiz": [
+    {}
+  ]
+}

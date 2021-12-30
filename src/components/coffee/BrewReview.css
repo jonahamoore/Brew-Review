@@ -1,0 +1,26 @@
+body{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: #481D24;
+    background-color: #E3D7CA;
+}
+
+.headerText{
+    font-size: 75px;
+    text-align: center;
+    margin-top: 0%;
+    margin-left: 0%;
+    margin-right: 0%;
+    margin-bottom: 0%;  
+}
+
+.cardBox{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: 25px;
+    padding: 25px;
+}
+
+.input--wide{
+    margin: 15px;
+}
