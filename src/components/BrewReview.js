@@ -19,7 +19,6 @@ export const BrewReview = () => {
 
         <BrewReviewHeader />
         <CollapsableNav />
-        {/* <CoffeeDropdown /> */}
         <ApplicationViews />
         
       </>

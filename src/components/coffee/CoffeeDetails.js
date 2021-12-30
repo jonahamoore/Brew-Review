@@ -30,9 +30,9 @@ export const CoffeeDetails = () => {
 
         return (
             <section className="Coffee">
-              <h3 className="coffee_brand">{coffee.brand}</h3>
-              <div className="coffee_name"> Name: {coffee.name}</div>
-              <div className="coffee_type">Type of Coffee: {coffee.coffeeTypes?.type}</div>
+              <h3 className="coffee_name">{coffee.name}</h3>
+              <div className="coffee_brand"> Brand: {coffee.brand}</div>
+              <div className="coffee_type">Roast Type: {coffee.coffeeTypes?.type}</div>
               <div className="coffee_flavor"> Flavor: {coffee.flavors?.taste_notes}</div>
               <div className="actorRating"> Actor comparison: {coffee.actorRatings?.name}</div>
               <div className="actorImages"><img src={coffee.actorRatings?.url} alt="Keanu Reeves" height="100px"/></div>

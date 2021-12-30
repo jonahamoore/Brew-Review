@@ -5,6 +5,8 @@ export const CoffeeContext = createContext()
 export const CoffeeProvider = (props) => {
 
     const [coffee, setCoffee] = useState([])
+    const [searchTerms, setSearchTerms] = useState("")
+
 
     const getCoffee = () => {
         return fetch("http://localhost:8088/coffee?_expand=coffeeTypes&_expand=flavors&_expand=actorRatings")
@@ -47,7 +49,7 @@ export const CoffeeProvider = (props) => {
     }
     return (
         <CoffeeContext.Provider value={{ 
-            coffee, addCoffee, getCoffee, deleteCoffee, updateCoffee, getCoffeeById
+            coffee, addCoffee, getCoffee, deleteCoffee, updateCoffee, getCoffeeById, searchTerms, setSearchTerms
         }}>
             {props.children}
         </CoffeeContext.Provider>

@@ -1,8 +1,16 @@
-do i need providers for each foreign key such as "flavorId": 1,
-            "typeOfCoffeeId": 1,
-            "actorRatingId": 1,
-
-
-coffee.sort((a,b) => new Date(b.date) - new Date(a.date)).map(coffee => {
-                return <CoffeeCard key={coffee.id} coffee={coffee}/>
-              })
+useEffect(() => {
+      if (searchTerms !== "") 
+      {
+        const subset = coffee.filter(coffee => coffee.name.toLowerCase().includes(searchTerms.toLowerCase()))
+        setFiltered(subset)
+      }
+      else if(searchTerms !== "")
+      {
+          const secondSubset = coffee.filter(coffee => coffee.brand.toLowerCase().includes(searchTerms.toLowerCase()))
+          setFiltered(secondSubset)
+      }
+      else 
+      {
+        setFiltered(coffee)
+      }
+    }, [searchTerms, coffee])

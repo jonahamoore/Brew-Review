@@ -1,5 +1,8 @@
 import React, { useContext, useEffect, useState } from "react"
 import { CoffeeContext } from "./CoffeeProvider"
+import { CoffeeTypesContext } from "../../coffeeTypes/CoffeeTypesProvider";
+import { FlavorsContext } from "../../flavor/FlavorsProvider";
+import { ActorRatingsContext } from "../../actorRatings/actorRatingsProvider";
 import { useNavigate, useParams }  from 'react-router-dom';
 import { grommet } from "grommet";
 import { Box, Button, DropButton, Heading, Text } from 'grommet';
@@ -8,6 +11,10 @@ import { Close } from 'grommet-icons';
 
 export const CoffeeForm = () => {
     const { addCoffee, getCoffeeById, updateCoffee } = useContext(CoffeeContext)
+    const { coffeeTypes, getCoffeeTypes } = useContext(CoffeeTypesContext)
+    const { flavors, getFlavors } = useContext(FlavorsContext)
+    const { actorRatings, getActorRatings } = useContext(ActorRatingsContext)
+
     
 
     const [coffee, setCoffee] = useState(
@@ -49,7 +56,7 @@ export const CoffeeForm = () => {
                     brand: coffee.brand,
                     coffeeTypesId: parseInt(coffee.coffeeTypesId),
                     flavorsId: parseInt(coffee.flavorsId),
-                    actorRatingsId: parseInt(coffee.actorRatingsId),
+                    actorRatingsId: parseInt(coffee.actorRatings.actorName),
                     description: coffee.description
                     
                 })
@@ -61,7 +68,7 @@ export const CoffeeForm = () => {
                     brand: coffee.brand,
                     coffeeTypesId: parseInt(coffee.coffeeTypesId),
                     flavorsId: parseInt(coffee.flavorsId),
-                    actorRatingsId: parseInt(coffee.actorRatingsId),
+                    actorRatingsId: parseInt(coffee.actorRatings.actorName),
                     description: coffee.description
                 })
                 .then(() => navigate("/coffee"))
@@ -70,6 +77,7 @@ export const CoffeeForm = () => {
     }
 
     useEffect(() => {
+      getCoffeeTypes().then(getActorRatings).then(getFlavors)
         if (coffeeId){
             getCoffeeById(coffeeId)
             .then(coffee => {
@@ -84,6 +92,14 @@ export const CoffeeForm = () => {
     return (
         <form className="coffeeForm">
           <h2 className="coffee__title">New Coffee Review</h2>
+
+          <fieldset>
+                <div className="form-group">
+                    <label htmlFor="coffeeName">Coffee name: </label>
+                    <input type="text" name="name" onChange={handleControlledInputChange} required autoFocus className="form-control" placeholder="Name of coffee" defaultValue={coffee.name}/>
+                </div>
+            </fieldset>
+
             <fieldset>
                 <div className="form-group">
                     <label htmlFor="coffeeBrand">Coffee brand: </label>
@@ -91,79 +107,52 @@ export const CoffeeForm = () => {
                 </div>
             </fieldset>
 
-        {/* <fieldset>
+        <fieldset>
           <div className="form-group">
             <label htmlFor="typesofcoffee"> Coffee Roast: </label>
-            <select value={coffee.coffeeTypesId} name="typeOfCoffeeId" className="form-control" onChange={handleControlledInputChange}>
+            <select value={coffee.coffeeTypesId} name="coffeeTypesId" className="form-control" onChange={handleControlledInputChange}>
               <option value="0">Select a Roast</option>
-              {coffee.typesOfCoffee.map(t => (
+              {coffeeTypes.map(t => (
                 <option key={t.id} value={t.id}>
                   {t.type}
                 </option>
               ))}
             </select>
           </div>
-        </fieldset> */}
-
-        
-
-            <fieldset>
-                <div className="form-group">
-                    <label htmlFor="coffeeName">Coffee name: </label>
-                    <input type="text" name="name" onChange={handleControlledInputChange} required autoFocus className="form-control" placeholder="Name of coffee" defaultValue={coffee.name}/>
-                </div>
-            </fieldset>
-            
-            <fieldset>
-                <div className="form-group">
-                <label htmlFor="typesofcoffee"> Coffee Roast: </label>
-                <select value={coffee.coffeeTypesId} name="typeOfCoffeeId" className="form-control" onChange={handleControlledInputChange}>
-                    <option value="0">Select a Roast</option>
-                    <option value="light">Light Roast</option>
-                    <option value="medium">Medium Roast</option>
-                    <option value="dark">Dark Roast</option>
-                </select>
-                </div>
-            </fieldset>
-
-            <fieldset>
-          <div className="form-group">
-            <label htmlFor="tasteOfCoffee"> How does it taste? </label>
-            <select value={coffee.coffeeTypesId} name="taste_notes" className="form-control" onChange={handleControlledInputChange}>
-              <option value="0">Select a taste</option>
-              <option value="earthy">Earthy</option>
-              <option value="Woody">Woody</option>
-              <option value="Chocolaty">Chocolaty</option>
-              <option value="Fruity">Fruity</option>
-              <option value="Nutty">Nutty</option>
-            </select>
-          </div>
         </fieldset>
 
         <fieldset>
           <div className="form-group">
-            <label htmlFor="actors"> Actor Comparison: </label>
-            <select value={coffee.actorRatingsId} name="typeOfCoffeeId" className="form-control" onChange={handleControlledInputChange}>
-              <option value="0">Select an actor Comparison</option>
-              <option value=""></option>
-              <option value="Tom Hanks">Tom Hanks</option>
-              <option value="Steven Seagal">Steven Seagal</option>
-              <option value="Karl Urban">Karl Urban</option>
+            <label htmlFor="flavor">Flavor: </label>
+            <select value={coffee.flavorsId} name="flavorsId" id="coffeeFlavor" className="form-control" onChange={handleControlledInputChange}>
+              <option value="0">Select a flavor</option>
+              {flavors.map(f => (
+                <option key={f.id} value={f.id}>
+                    {f.taste_notes}
+                </option>
+              ))}
             </select>
           </div>
         </fieldset>
+        
+            <fieldset>
+                <div className="form-group">
+                    <label htmlFor="actor">Actor Comparison: </label>
+                    <input type="text" name="actorName" onChange={handleControlledInputChange} required autoFocus className="form-control" placeholder="Actor's name" defaultValue={coffee.actorRatings.actorName}/>
+                </div>
+            </fieldset>
 
             <fieldset>
                 <div className="form-group">
                     <label htmlFor="actorUrl">Url of image here: </label>
-                    <input type="text" name="url" onChange={handleControlledInputChange} required autoFocus className="form-control" placeholder="image address here" defaultValue={coffee.actorRatings.url}/>
+                    <input type="text" name="url" onChange={handleControlledInputChange} required autoFocus className="form-control" placeholder="Image address here" defaultValue={coffee.actorRatings.url}/>
                 </div>
             </fieldset>
 
             <fieldset>
                 <div className="form-group">
                     <label htmlFor="coffeeDescription">Coffee description: </label>
-                    <input type="text" name="description" onChange={handleControlledInputChange} required autoFocus className="form-control" placeholder="compare actor to coffee here" defaultValue={coffee.description}/>
+                    <input type="text" name="description" onChange={handleControlledInputChange} required autoFocus className="form-control" placeholder="Compare actor to coffee here" defaultValue={coffee.description}/>
                 </div>
             </fieldset>
 

@@ -15,7 +15,7 @@
       "coffeeTypesId": 1,
       "flavorsId": 1,
       "actorRatingsId": 1,
-      "description": "it's solid, not the best thing ever but it's there when you need it and doesn't disappoint in what it does. "
+      "description": "It's efficient, not the best thing ever but it's there when you need it and doesn't disappoint in what it does. "
     },
     {
       "id": 2,
@@ -26,6 +26,16 @@
       "coffeeTypesId": 2,
       "actorRatingsId": 2,
       "description": "underrated, actually good and you don't realize it until you think about it"
+    },
+    {
+      "userId": 1,
+      "id": 3,
+      "name": "Sonder",
+      "brand": "Metropolis Coffee Company",
+      "coffeeTypesId": 3,
+      "flavorsId": 3,
+      "actorRatingsId": 3,
+      "description": "Dreadful, nobody likes, truly an insult to anyone that encounters it. I mean it was free from an Airbnb, but much like Steven Seagal's movies, not worth your time."
     }
   ],
   "coffeeTypes": [
@@ -50,6 +60,18 @@
     {
       "id": 2,
       "taste_notes": "Chocolaty"
+    },
+    {
+      "id": 3,
+      "taste_notes": "Earthy"
+    },
+    {
+      "id": 4,
+      "taste_notes": "Fruity"
+    },
+    {
+      "id": 5,
+      "taste_notes": "Nutty"
     }
   ],
   "actorRatings": [
@@ -62,6 +84,16 @@
       "id": 2,
       "actorName": "Karl Urban",
       "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Karl_Urban_by_Gage_Skidmore_2.jpg/220px-Karl_Urban_by_Gage_Skidmore_2.jpg"
+    },
+    {
+      "id": 3,
+      "actorName": "Steven Seagal",
+      "url": "https://upload.wikimedia.org/wikipedia/commons/d/d9/Steven_Seagal_November_2016.jpg"
+    }
+  ],
+  "coffeeQuiz": [
+    {
+      
     }
   ]
 }

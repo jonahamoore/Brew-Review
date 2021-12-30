@@ -13,3 +13,14 @@ body{
     margin-bottom: 0%;  
 }
 
+.cardBox{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: 25px;
+    padding: 25px;
+}
+
+.input--wide{
+    margin: 15px;
+}
