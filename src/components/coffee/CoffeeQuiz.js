@@ -31,20 +31,6 @@ export const CoffeeQuiz = () => {
             </select>
           </div>
     </fieldset>
-
-    <fieldset>
-          <div className="form-group">
-            <label htmlFor="actorRatings">Actor to Coffee Comparison: </label>
-            <select value={coffee.actorRatingsId} name="actorRatingsId" id="coffeeActorRatings" className="form-control" onChange={}>
-              <option value="0">Select an Actor</option>
-              {actorRatings.map(a => (
-                <option key={a.id} value={a.id}>
-                  {a.actorName}
-                </option>
-              ))}
-            </select>
-          </div>
-    </fieldset>
 </form>
     )
 }

@@ -15,3 +15,11 @@ export const CoffeeFilter = () => {
     </>
   )
 }
+{/* <div className="RoastDropdown">
+  <label for="coffeeRoast">Choose a Roast Type:</label>
+  <select name="coffeeTypes" id="coffeeRoast">
+    <option value="Light">Light</option>
+    <option value="Medium">Medium</option>
+    <option value="Dark">Dark</option>
+  </select>
+</div> */}

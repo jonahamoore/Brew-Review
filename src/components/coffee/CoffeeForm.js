@@ -56,7 +56,7 @@ export const CoffeeForm = () => {
                     brand: coffee.brand,
                     coffeeTypesId: parseInt(coffee.coffeeTypesId),
                     flavorsId: parseInt(coffee.flavorsId),
-                    actorRatingsId: parseInt(coffee.actorRatings.actorName),
+                    actorRatingsId: parseInt(coffee.actorRatingsId),
                     description: coffee.description
                     
                 })
@@ -68,7 +68,7 @@ export const CoffeeForm = () => {
                     brand: coffee.brand,
                     coffeeTypesId: parseInt(coffee.coffeeTypesId),
                     flavorsId: parseInt(coffee.flavorsId),
-                    actorRatingsId: parseInt(coffee.actorRatings.actorName),
+                    actorRatingsId: parseInt(coffee.actorRatingsId),
                     description: coffee.description
                 })
                 .then(() => navigate("/coffee"))
@@ -135,12 +135,20 @@ export const CoffeeForm = () => {
           </div>
         </fieldset>
         
-            <fieldset>
-                <div className="form-group">
-                    <label htmlFor="actor">Actor Comparison: </label>
-                    <input type="text" name="actorName" onChange={handleControlledInputChange} required autoFocus className="form-control" placeholder="Actor's name" defaultValue={coffee.actorRatings.actorName}/>
-                </div>
-            </fieldset>
+
+    <fieldset>
+          <div className="form-group">
+            <label htmlFor="actorRatings">Actor to Coffee Comparison: </label>
+            <select value={coffee.actorRatingsId} name="actorRatingsId" id="coffeeActorRatings" className="form-control" onChange={handleControlledInputChange}>
+              <option value="0">Select an Actor</option>
+              {actorRatings.map(a => (
+                <option key={a.id} value={a.id}>
+                  {a.actorName}
+                </option>
+              ))}
+            </select>
+          </div>
+    </fieldset>
 
             <fieldset>
                 <div className="form-group">
@@ -162,7 +170,9 @@ export const CoffeeForm = () => {
               event.preventDefault() 
               handleSaveCoffeeReview()
             }}>
-          {coffeeId ? <>Save Edited Coffee Review</> : <>Save Coffee Review</>}</button>
+          {coffeeId ? <>Save Edited Coffee Review</> : <>Save Coffee Review</>}
+          </button>
+
         </form>
       )
   }
