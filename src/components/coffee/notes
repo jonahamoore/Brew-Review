@@ -14,3 +14,7 @@ useEffect(() => {
         setFiltered(coffee)
       }
     }, [searchTerms, coffee])
+
+    how do i make the search bar work for several different things not just name such as brand, actor? im trying to set up conditionals. i prefer this over dropdown but not oppossed to learning how to do that either.
+
+    work on quiz, what components would i need, i worked on a quiz form,

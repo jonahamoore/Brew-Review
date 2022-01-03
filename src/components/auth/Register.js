@@ -1,6 +1,7 @@
 import React, { useRef } from "react"
 import { useNavigate } from "react-router-dom"
 import "./Login.css"
+import { grommet, Box, Card, Heading, Button } from "grommet"
 
 export const Register = (props) => {
     const firstName = useRef()
@@ -38,7 +39,7 @@ export const Register = (props) => {
                             if (createdUser.hasOwnProperty("id")) {
                                 localStorage.setItem("brew_User", createdUser.id)
                                 props.setLoggedin(true)
-                                navigate("/")
+                                navigate("/coffee")
                             }
                         })
                 }
@@ -57,24 +58,30 @@ export const Register = (props) => {
                 <button className="button--close" onClick={e => conflictDialog.current.close()}>Close</button>
             </dialog>
 
+            <div className="registerForm">
+            <Card width="large">
             <form className="form--login" onSubmit={handleRegister}>
-                <h1 className="h3 mb-3 font-weight-normal">Please Register for Brew Review</h1>
+                <Heading className="brewReviewRegisterHeader">Please Register for Brew Review</Heading>
+                <Box>
                 <fieldset>
-                    <label htmlFor="firstName"> First Name </label>
+                    <label htmlFor="firstName"> <h3>First Name</h3> </label>
                     <input ref={firstName} type="text" name="firstName" className="form-control" placeholder="First name" required autoFocus />
                 </fieldset>
                 <fieldset>
-                    <label htmlFor="lastName"> Last Name </label>
+                    <label htmlFor="lastName"> <h3>Last Name</h3> </label>
                     <input ref={lastName} type="text" name="lastName" className="form-control" placeholder="Last name" required />
                 </fieldset>
                 <fieldset>
-                    <label htmlFor="inputEmail"> Email address </label>
+                    <label htmlFor="inputEmail"> <h3>Email address</h3> </label>
                     <input ref={email} type="email" name="email" className="form-control" placeholder="Email address" required />
                 </fieldset>
                 <fieldset>
-                    <button type="submit"> Sign in </button>
+                    <Button color="#704E33" margin={"small"} alignSelf="center" justify="center" type="submit"> Sign in </Button>
                 </fieldset>
+                </Box>
             </form>
+            </Card>
+            </div>
         </main>
     )
 }

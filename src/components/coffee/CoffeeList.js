@@ -13,6 +13,7 @@ export const CoffeeList = () => {
     const {coffeeTypes, getCoffeeTypes} = useContext(CoffeeTypesContext)
     const {actorRatings, getActorRatings} = useContext(ActorRatingsContext)
     const {flavors, getFlavors} = useContext(FlavorsContext)
+    
 
     const [ filteredCoffee, setFiltered ] = useState([])
 
@@ -25,16 +26,6 @@ export const CoffeeList = () => {
       .then(getCoffeeTypes)
     }, [])
 
-    // useEffect(() => {
-    //   if (searchTerms !== "") {
-    //     const subset = coffee.filter(coffee => coffee.name.toLowerCase().includes(searchTerms.toLowerCase()))
-    //     setFiltered(subset)
-    //   } 
-    //   else {
-    //     setFiltered(coffee)
-    //   }
-    // }, [searchTerms, coffee])
-    
     useEffect(() => {
       if (searchTerms !== "") 
       {
@@ -52,18 +43,26 @@ export const CoffeeList = () => {
       }
     }, [searchTerms, coffee])
 
+
+
+
     return (
         <>
           <h1 className="Coffee-Title">Coffee Reviews</h1>
-      
-          <Button color="#704E33" label="New Coffee Review" onClick={() => navigate("/coffee/create")}>
+
+          <div className="newReviewButtonBox">
+          <Button margin="small" align="center" color="#704E33" label="New Coffee Review" onClick={() => navigate("/coffee/create")}>
                   </Button>
+          </div>
+
+          
           <div className="coffee">
             { filteredCoffee.map(coffee => {
                 return <CoffeeCard key={coffee.id} coffee={coffee} /> 
               })
             }
           </div>
+          
         </>
         )
       }

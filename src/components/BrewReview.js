@@ -6,21 +6,22 @@ import { Register } from "./auth/Register";
 // import "./BrewReview.css";
 import { BrewReviewHeader } from "../header/Header";
 import { CollapsableNav } from "./nav/NavBar"
-// import { CoffeeDropdown } from "./coffee/CoffeeDropdown";
+import { CoffeeDropDown } from "./coffee/dropdown/DropDown";
+
 
 export const BrewReview = () => {
   const [loggedin, setLoggedin] = useState(false);
 
   const changeState = (bool) => setLoggedin(bool);
-  
+
+
   if (localStorage.getItem("brew_User")) {
     return (
       <>
-
         <BrewReviewHeader />
         <CollapsableNav />
+        {/* <CoffeeDropDown/> */}
         <ApplicationViews />
-        
       </>
     );
   } else {

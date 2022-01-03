@@ -5,7 +5,7 @@ import { FlavorsContext } from "../../flavor/FlavorsProvider";
 import { ActorRatingsContext } from "../../actorRatings/actorRatingsProvider";
 import { useNavigate, useParams }  from 'react-router-dom';
 import { grommet } from "grommet";
-import { Box, Button, DropButton, Heading, Text } from 'grommet';
+import { Box, Button, DropButton, Heading, Text, Card, CardBody, CardHeader, CardFooter } from 'grommet';
 import { Close } from 'grommet-icons';
 
 
@@ -90,26 +90,28 @@ export const CoffeeForm = () => {
     }, [])
 
     return (
+    <div className="editFormCard">
+    <Card width="medium">
         <form className="coffeeForm">
-          <h2 className="coffee__title">New Coffee Review</h2>
+          <Heading align="center" justify="center" className="coffee__title">New Coffee Review</Heading>
 
           <fieldset>
                 <div className="form-group">
-                    <label htmlFor="coffeeName">Coffee name: </label>
+                    <label htmlFor="coffeeName"><h3>Coffee name:</h3> </label>
                     <input type="text" name="name" onChange={handleControlledInputChange} required autoFocus className="form-control" placeholder="Name of coffee" defaultValue={coffee.name}/>
                 </div>
             </fieldset>
 
             <fieldset>
                 <div className="form-group">
-                    <label htmlFor="coffeeBrand">Coffee brand: </label>
+                    <label htmlFor="coffeeBrand"><h3>Coffee brand:</h3> </label>
                     <input type="text" name="brand" onChange={handleControlledInputChange} required autoFocus className="form-control" placeholder="Brand of coffee" defaultValue={coffee.brand}/>
                 </div>
             </fieldset>
 
         <fieldset>
           <div className="form-group">
-            <label htmlFor="typesofcoffee"> Coffee Roast: </label>
+            <label htmlFor="typesofcoffee"> <h3>Coffee Roast:</h3> </label>
             <select value={coffee.coffeeTypesId} name="coffeeTypesId" className="form-control" onChange={handleControlledInputChange}>
               <option value="0">Select a Roast</option>
               {coffeeTypes.map(t => (
@@ -123,7 +125,7 @@ export const CoffeeForm = () => {
 
         <fieldset>
           <div className="form-group">
-            <label htmlFor="flavor">Flavor: </label>
+            <label htmlFor="flavor"><h3>Flavor:</h3> </label>
             <select value={coffee.flavorsId} name="flavorsId" id="coffeeFlavor" className="form-control" onChange={handleControlledInputChange}>
               <option value="0">Select a flavor</option>
               {flavors.map(f => (
@@ -138,7 +140,7 @@ export const CoffeeForm = () => {
 
     <fieldset>
           <div className="form-group">
-            <label htmlFor="actorRatings">Actor to Coffee Comparison: </label>
+            <label htmlFor="actorRatings"><h3>Actor to Coffee Comparison:</h3> </label>
             <select value={coffee.actorRatingsId} name="actorRatingsId" id="coffeeActorRatings" className="form-control" onChange={handleControlledInputChange}>
               <option value="0">Select an Actor</option>
               {actorRatings.map(a => (
@@ -152,27 +154,30 @@ export const CoffeeForm = () => {
 
             <fieldset>
                 <div className="form-group">
-                    <label htmlFor="actorUrl">Url of image here: </label>
+                    <label htmlFor="actorUrl"><h3>Url of image here:</h3> </label>
                     <input type="text" name="url" onChange={handleControlledInputChange} required autoFocus className="form-control" placeholder="Image address here" defaultValue={coffee.actorRatings.url}/>
                 </div>
             </fieldset>
 
             <fieldset>
                 <div className="form-group">
-                    <label htmlFor="coffeeDescription">Coffee description: </label>
+                    <label htmlFor="coffeeDescription"><h3>Coffee description:</h3> </label>
                     <input type="text" name="description" onChange={handleControlledInputChange} required autoFocus className="form-control" placeholder="Compare actor to coffee here" defaultValue={coffee.description}/>
                 </div>
             </fieldset>
 
-          <button primary label="Save Coffee Review"className="formbutton"
+          <Button color="#704E33" alignSelf="center" margin="xsmall" label="Save Coffee Review"className="formbutton"
             disabled={isLoading}
             onClick={event => {
               event.preventDefault() 
               handleSaveCoffeeReview()
             }}>
-          {coffeeId ? <>Save Edited Coffee Review</> : <>Save Coffee Review</>}
-          </button>
+              
+          {/* {coffeeId ? <>Save Edited Coffee Review</> : <>Save Coffee Review</>} */}
+          </Button>
 
         </form>
+    </Card>
+    </div>
       )
   }

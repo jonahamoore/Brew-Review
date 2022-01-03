@@ -2,11 +2,13 @@ import React, { useState, createContext } from "react"
 
 export const CoffeeContext = createContext()
 
+
 export const CoffeeProvider = (props) => {
 
     const [coffee, setCoffee] = useState([])
     const [searchTerms, setSearchTerms] = useState("")
 
+    
 
     const getCoffee = () => {
         return fetch("http://localhost:8088/coffee?_expand=coffeeTypes&_expand=flavors&_expand=actorRatings")

@@ -3,7 +3,8 @@ import React, { useState, createContext } from "react"
 export const CoffeeTypesContext = createContext()
 
 export const CoffeeTypesProvider = (props) => {
-    const [coffeeTypes, setCoffeeTypes] = useState([])
+    const [coffeeTypes, setCoffeeTypes, ] = useState([])
+    const [coffeeFilter, setCoffeeFilter] = useState("")
 
     const getCoffeeTypes = () => {
         return fetch("http://localhost:8088/coffeeTypes?_embed=coffee")
@@ -40,7 +41,7 @@ export const CoffeeTypesProvider = (props) => {
 
     return (
         <CoffeeTypesContext.Provider value={{ 
-            coffeeTypes, addCoffeeTypes, getCoffeeTypes, updateCoffeeTypes, getCoffeeTypesById
+            coffeeTypes, addCoffeeTypes, getCoffeeTypes, updateCoffeeTypes, getCoffeeTypesById, coffeeFilter, setCoffeeFilter
         }}>
             {props.children}
         </CoffeeTypesContext.Provider>

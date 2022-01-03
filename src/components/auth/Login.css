@@ -1,4 +1,4 @@
-/* .h1, h1 {
+.h1, h1 {
     font-size: 2.5rem;
    }
    
@@ -13,6 +13,7 @@
     display: inline-block;
     margin: 0 auto;
     text-align: left;
+    padding: 5%;
    }
    
    .form--login > fieldset > input[type="email"],
@@ -67,5 +68,18 @@
     min-height: 5rem;
    }
    
-   
-    */
+   .email{
+       text-align: center;
+   }
+
+   .emailAddressBox{
+       display: flex;
+       flex-direction: column;
+       min-width: auto;
+   }
+
+   .registerForm{
+       display: flex;
+       justify-content: center;
+       margin: 10%;
+   }

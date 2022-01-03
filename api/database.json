@@ -29,13 +29,23 @@
     },
     {
       "userId": 1,
+      "id": 4,
       "name": "Midnight Oil",
       "brand": "Sugar Creek Coffee Roasters",
       "coffeeTypesId": 3,
       "flavorsId": 3,
       "actorRatingsId": 4,
-      "description": "Classic, top notch, top tier, always delivers. Like Tom Hanks if you don't like this coffee, then you probably just don't like any coffee. Stick to tea, that's a whole other discussion.",
-      "id": 4
+      "description": "Classic, top notch, top tier, always delivers. Like Tom Hanks if you don't like this coffee, then you probably just don't like any coffee. "
+    },
+    {
+      "userId": 1,
+      "id": 5,
+      "name": "Folgers 1850",
+      "brand": "Folgers",
+      "coffeeTypesId": 3,
+      "flavorsId": 2,
+      "actorRatingsId": 2,
+      "description": "I honestly can't remember which roast of the 1850 I had but it was good, I enjoyed it a lot. That is why it is Karl Urban, you don't remember exactly but it was surprisingly good, and very much underrated."
     }
   ],
   "coffeeTypes": [
@@ -97,6 +107,11 @@
     }
   ],
   "coffeeQuiz": [
-    {}
+    {
+      "id": 1,
+      "coffeeRoasts": "Dark Roast",
+      "quizFlavors": "Nutty",
+      "actorChoices": "Tom Hanks"
+    }
   ]
 }

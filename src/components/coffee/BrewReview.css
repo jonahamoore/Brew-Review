@@ -13,14 +13,56 @@ body{
     margin-bottom: 0%;  
 }
 
-.cardBox{
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    margin: 25px;
-    padding: 25px;
+.coffeeCard{
+    float: left;
 }
 
 .input--wide{
     margin: 15px;
+}
+
+.Coffee-Title{
+    text-align: center;
+}
+
+.coffeeBrand{
+    padding: 1%;
+}
+
+.type_OfCoffee{
+    padding: 1%
+}
+
+.flavor{
+    padding: 1%
+}
+
+.rating{
+    padding: 1%
+}
+
+.actorPics{
+    padding: 1%
+}
+
+.newReviewButtonBox{
+    display: flex;
+    justify-content: center;
+}
+
+.searchBar{
+    margin: 0.5%;
+    padding: 0.5%;
+}
+
+.detailsCard{
+    display: flex;
+    justify-content:center;
+    flex-wrap: wrap;
+}
+
+.editFormCard{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
 }
