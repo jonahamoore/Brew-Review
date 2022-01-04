@@ -9,63 +9,61 @@ import { grommet, Button, Box } from "grommet";
 
 
 export const CoffeeList = () => {
-    const {coffee, getCoffee, searchTerms} = useContext(CoffeeContext)
-    const {coffeeTypes, getCoffeeTypes} = useContext(CoffeeTypesContext)
-    const {actorRatings, getActorRatings} = useContext(ActorRatingsContext)
-    const {flavors, getFlavors} = useContext(FlavorsContext)
-    
+  const { coffee, getCoffee, searchTerms } = useContext(CoffeeContext)
 
-    const [ filteredCoffee, setFiltered ] = useState([])
 
-    const navigate = useNavigate();
+  const [coffeesToPrint, setCoffeesToPrint] = useState([])
 
-    useEffect(() => {
-      getCoffee()
-      .then(getFlavors)
-      .then(getActorRatings)
-      .then(getCoffeeTypes)
-    }, [])
+  const navigate = useNavigate();
 
-    useEffect(() => {
-      if (searchTerms !== "") 
-      {
-        const subset = coffee.filter(coffee => coffee.name.toLowerCase().includes(searchTerms.toLowerCase()))
-        setFiltered(subset)
-      }
-      else if(searchTerms !== "")
-      {
-          const secondSubset = coffee.filter(coffee => coffee.brand.toLowerCase().includes(searchTerms.toLowerCase()))
-          setFiltered(secondSubset)
-      }
-      else 
-      {
-        setFiltered(coffee)
-      }
-    }, [searchTerms, coffee])
+  useEffect(() => {
+    getCoffee()
+  }, [])
+
+  useEffect(() => {
+    if (searchTerms !== "") {
+
+      // const subset = []
+
+      // for(let i = 0; i < coffee.length; i++){
+      //   console.log("this is our current coffee we're checking in the filter:", coffee[i])
+      //   if(coffee[i].name.toLowerCase().includes(searchTerms.toLowerCase()) || ){
+      //     subset.push(coffee[i])
+
+      //   }
+      // }
+      
+      const subset = coffee.filter(coffeeObj => coffeeObj.name.toLowerCase().includes(searchTerms.toLowerCase()) || coffeeObj.brand.toLowerCase().includes(searchTerms.toLowerCase()) ||coffeeObj.coffeeTypes.type.toLowerCase().includes(searchTerms.toLowerCase())||coffeeObj.flavors.taste_notes.toLowerCase().includes(searchTerms.toLowerCase())||coffeeObj.actorRatings.actorName.toLowerCase().includes(searchTerms.toLowerCase()))
+      setCoffeesToPrint(subset)
+
+    } else {
+      setCoffeesToPrint(coffee)
+    }
+  }, [searchTerms, coffee])
 
 
 
 
-    return (
-        <>
-          <h1 className="Coffee-Title">Coffee Reviews</h1>
+  return (
+    <>
+      <h1 className="Coffee-Title">Coffee Reviews</h1>
 
-          <div className="newReviewButtonBox">
-          <Button margin="small" align="center" color="#704E33" label="New Coffee Review" onClick={() => navigate("/coffee/create")}>
-                  </Button>
-          </div>
+      <div className="newReviewButtonBox">
+        <Button margin="small" align="center" color="#704E33" label="New Coffee Review" onClick={() => navigate("/coffee/create")}>
+        </Button>
+      </div>
 
-          
-          <div className="coffee">
-            { filteredCoffee.map(coffee => {
-                return <CoffeeCard key={coffee.id} coffee={coffee} /> 
-              })
-            }
-          </div>
-          
-        </>
-        )
-      }
 
-    
+      <div className="coffee">
+        {coffeesToPrint.map(coffee => {
+          return <CoffeeCard key={coffee.id} coffee={coffee} />
+        })
+        }
+      </div>
+
+    </>
+  )
+}
+
+
 

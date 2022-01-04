@@ -6,7 +6,7 @@ import { Register } from "./auth/Register";
 // import "./BrewReview.css";
 import { BrewReviewHeader } from "../header/Header";
 import { CollapsableNav } from "./nav/NavBar"
-import { CoffeeDropDown } from "./coffee/dropdown/DropDown";
+
 
 
 export const BrewReview = () => {
@@ -20,7 +20,6 @@ export const BrewReview = () => {
       <>
         <BrewReviewHeader />
         <CollapsableNav />
-        {/* <CoffeeDropDown/> */}
         <ApplicationViews />
       </>
     );

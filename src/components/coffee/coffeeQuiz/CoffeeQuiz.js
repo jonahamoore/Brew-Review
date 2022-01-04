@@ -15,7 +15,7 @@ export const CoffeeQuiz = () => {
     <fieldset>
         <div className="form-group">
           <label htmlFor="typesofcoffee"> Coffee Roast: </label>
-          <select value={coffee.coffeeTypesId} name="coffeeTypesId" className="form-control" onChange={}>
+          <select value={coffee.coffeeTypesId} name="coffeeTypesId" className="form-control" >
             <option value="0">Select a Roast</option>
             {coffeeTypes.map(t => (
               <option key={t.id} value={t.id}>

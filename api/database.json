@@ -46,6 +46,16 @@
       "flavorsId": 2,
       "actorRatingsId": 2,
       "description": "I honestly can't remember which roast of the 1850 I had but it was good, I enjoyed it a lot. That is why it is Karl Urban, you don't remember exactly but it was surprisingly good, and very much underrated."
+    },
+    {
+      "userId": 1,
+      "id": 6,
+      "name": "French Roast",
+      "brand": "Starbucks",
+      "coffeeTypesId": 3,
+      "flavorsId": 6,
+      "actorRatingsId": 5,
+      "description": "You get it because you want to self-indulge a little, I get it, we've all been there. However, a high price, fancy packaging, and a nice logo means nothing. Truth is it burned you, pretentious, smokey with really bad taste.  "
     }
   ],
   "coffeeTypes": [
@@ -82,6 +92,10 @@
     {
       "id": 5,
       "taste_notes": "Nutty"
+    },
+    {
+      "id": 6,
+      "taste_notes": "Smokey"
     }
   ],
   "actorRatings": [
@@ -104,6 +118,11 @@
       "id": 4,
       "actorName": "Tom Hanks",
       "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Tom_Hanks_TIFF_2019.jpg/1024px-Tom_Hanks_TIFF_2019.jpg"
+    },
+    {
+      "id": 5,
+      "actorName": "Gwyneth Paltrow",
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/Gwyneth_Paltrow_avp_Iron_Man_3_Paris.jpg/330px-Gwyneth_Paltrow_avp_Iron_Man_3_Paris.jpg"
     }
   ],
   "coffeeQuiz": [

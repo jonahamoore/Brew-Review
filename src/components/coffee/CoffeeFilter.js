@@ -1,13 +1,13 @@
 import React, { useContext, useEffect, useState } from "react";
 import { CoffeeContext } from "./CoffeeProvider";
-import { CoffeeTypesContext } from "../../coffeeTypes/CoffeeTypesProvider";
+// import { CoffeeTypesContext } from "../../coffeeTypes/CoffeeTypesProvider";
 import "./BrewReview.css"
 
 export const CoffeeFilter = () => {
     const { setSearchTerms } = useContext(CoffeeContext)
-//     const {coffee, getCoffee} = useContext(CoffeeContext)
-//     const {searchedCoffee, setSearchedCoffee} = useState("")
-//     const {coffeeTypes, getCoffeeTypes} = useContext(CoffeeTypesContext)
+    // const {coffee, getCoffee} = useContext(CoffeeContext)
+    // const {searchedCoffee, setSearchedCoffee} = useState("")
+    // const {coffeeTypes, getCoffeeTypes} = useContext(CoffeeTypesContext)
 
 //     useEffect(() => {
 //       getCoffee()
