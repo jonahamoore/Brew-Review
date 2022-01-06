@@ -6,14 +6,22 @@ import { grommet, Button } from "grommet";
 import { CoffeeTypesCard } from "./CoffeeQuizCard";
 import { CoffeeFlavorsCard } from "./CoffeeFlavorsCard";
 import { ActorRatingsCard } from "./CoffeeActorsCard";
+import { CoffeeQuizzesContext } from "./CoffeeQuizzesProvider";
 
 //this is the coffeetypescard
 export const CoffeeQuiz = () => {
   const { coffeeTypes, getCoffeeTypes } = useContext(CoffeeTypesContext)
   const { flavors, getFlavors } = useContext(FlavorsContext)
   const { actorRatings, getActorRatings } = useContext(ActorRatingsContext)
+  // const [quiz, getQuiz] = useContext(CoffeeQuizzesContext)
+ //state here! pass state to the children, then when click change state
 
-  // const navigate = useNavigate();
+ const [quiz, setQuiz] = useState()
+
+ const [selectedCoffeeType, setSelectedCoffeeType] = useState({})
+  
+ // make state varibale for flavor and actor
+
 
   useEffect(() => {
     getCoffeeTypes()
@@ -21,12 +29,22 @@ export const CoffeeQuiz = () => {
     .then(getActorRatings)
   }, [])
 
+  
+  
+
     return(
 
     <section>
       <div className="coffeeTypes">
+        
         {coffeeTypes.map(type => {
-          return <CoffeeTypesCard key={type.id} coffeeTypes={type} />
+          if(type.id === selectedCoffeeType.id){
+            return <CoffeeTypesCard key={type.id} className="highlightedCoffeeTypeSelection" functionToChangeCoffeeTypeState={setSelectedCoffeeType} coffeeTypes={type} /> 
+          } else {
+            return <CoffeeTypesCard key={type.id} functionToChangeCoffeeTypeState={setSelectedCoffeeType} coffeeTypes={type} /> 
+
+          }
+          
         })
         }
       </div>
