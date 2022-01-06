@@ -55,47 +55,56 @@
       "coffeeTypesId": 3,
       "flavorsId": 6,
       "actorRatingsId": 5,
-      "description": "You get it because you want to self-indulge a little, I get it, we've all been there. However, a high price, fancy packaging, and a nice logo means nothing. Truth is it burned you, pretentious, smokey with really bad taste.  "
+      "description": "You want to self-indulge a little, I get it, we've all been there. However, a high price, fancy packaging, and a nice logo means nothing. Truth is it burned you, pretentious, smokey with really bad taste.  "
     }
   ],
   "coffeeTypes": [
     {
       "id": 1,
-      "type": "Medium Roast"
+      "type": "Medium Roast",
+      "typeImage": "https://casualblogging.com/wp-content/uploads/2017/07/medium.jpg"
     },
     {
       "id": 2,
-      "type": "Light Roast"
+      "type": "Light Roast",
+      "typeImage": "https://mrgreenscoffeebeans.com/wp-content/uploads/2017/10/coffee-84624_1280.jpg"
     },
     {
       "id": 3,
-      "type": "Dark Roast"
+      "type": "Dark Roast",
+      "typeImage": "https://sprudge.com/wp-content/uploads/2018/11/dark-roast.jpg"
     }
   ],
   "flavors": [
     {
       "id": 1,
-      "taste_notes": "Woody"
+      "taste_notes": "Woody",
+      "flavorImages": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/00/Bowmore_whisky_12_years.JPG/800px-Bowmore_whisky_12_years.JPG"
     },
     {
       "id": 2,
-      "taste_notes": "Chocolaty"
+      "taste_notes": "Chocolaty",
+      "flavorImages": "https://upload.wikimedia.org/wikipedia/commons/7/70/Chocolate_%28blue_background%29.jpg"
     },
     {
       "id": 3,
-      "taste_notes": "Earthy"
+      "taste_notes": "Earthy",
+      "flavorImages": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/Amanita_muscaria_%28fly_agaric%29.JPG/220px-Amanita_muscaria_%28fly_agaric%29.JPG"
     },
     {
       "id": 4,
-      "taste_notes": "Fruity"
+      "taste_notes": "Fruity",
+      "flavorImages": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Blackberryraspberrystrawberry.jpg/800px-Blackberryraspberrystrawberry.jpg"
     },
     {
       "id": 5,
-      "taste_notes": "Nutty"
+      "taste_notes": "Nutty",
+      "flavorImages": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/63/Common-nuts.png/290px-Common-nuts.png"
     },
     {
       "id": 6,
-      "taste_notes": "Smokey"
+      "taste_notes": "Smokey",
+      "flavorImages": "https://morningchores.com/wp-content/uploads/2017/11/smoker-whole-chicken-600x450.jpg"
     }
   ],
   "actorRatings": [
@@ -123,14 +132,6 @@
       "id": 5,
       "actorName": "Gwyneth Paltrow",
       "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/Gwyneth_Paltrow_avp_Iron_Man_3_Paris.jpg/330px-Gwyneth_Paltrow_avp_Iron_Man_3_Paris.jpg"
-    }
-  ],
-  "coffeeQuiz": [
-    {
-      "id": 1,
-      "coffeeRoasts": "Dark Roast",
-      "quizFlavors": "Nutty",
-      "actorChoices": "Tom Hanks"
     }
   ]
 }

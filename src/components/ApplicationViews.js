@@ -8,7 +8,9 @@ import { CoffeeFilter } from "./coffee/CoffeeFilter";
 import { CoffeeTypesProvider } from "../coffeeTypes/CoffeeTypesProvider";
 import { FlavorsProvider } from "../flavor/FlavorsProvider";
 import { ActorRatingsProvider } from "../actorRatings/actorRatingsProvider";
-// import { Home } from "../Home";
+import { CoffeeQuizzesProvider } from "./coffee/coffeeQuiz/CoffeeQuizzesProvider";
+import { CoffeeQuiz } from "./coffee/coffeeQuiz/CoffeeQuiz";
+
 
 
 export const ApplicationViews = () => {
@@ -17,13 +19,15 @@ export const ApplicationViews = () => {
         <CoffeeTypesProvider>
           <FlavorsProvider> 
             <ActorRatingsProvider>
+              <CoffeeQuizzesProvider>
               <Routes>
-                {/* <Route path="/" element={<Home />} /> */}
                 <Route path="coffee/*" element={<><CoffeeFilter /><CoffeeList /></>} />
                 <Route path="coffee/create/*" element={<CoffeeForm />} />
                 <Route path="coffee/edit/:coffeeId/*" element={<CoffeeForm />} />
                 <Route path="coffee/detail/:coffeeId/*" element={<CoffeeDetails />} />
+                <Route path="coffeeQuiz/*" element={<CoffeeQuiz/>} />
               </Routes>
+              </CoffeeQuizzesProvider>
             </ActorRatingsProvider>
           </FlavorsProvider>
         </CoffeeTypesProvider>

@@ -26,11 +26,11 @@ export const CoffeeFilter = () => {
     return (
         <>
       <div className="searchBar">
-      <strong>Coffee search:</strong>
+      <strong>Search Review:</strong>
       <input type="text"
         className="input--wide"
         onKeyUp={(event) => setSearchTerms(event.target.value)}
-        placeholder="Search for a coffee... " />
+        placeholder="Search by coffee name, brand, roast type, or actor name" />
       </div>
     </>
   )}

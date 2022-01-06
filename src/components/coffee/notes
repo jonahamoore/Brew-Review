@@ -1,20 +1,3 @@
-useEffect(() => {
-      if (searchTerms !== "") 
-      {
-        const subset = coffee.filter(coffee => coffee.name.toLowerCase().includes(searchTerms.toLowerCase()))
-        setFiltered(subset)
-      }
-      else if(searchTerms !== "")
-      {
-          const secondSubset = coffee.filter(coffee => coffee.brand.toLowerCase().includes(searchTerms.toLowerCase()))
-          setFiltered(secondSubset)
-      }
-      else 
-      {
-        setFiltered(coffee)
-      }
-    }, [searchTerms, coffee])
+made a json example, made part of a form, made part of a provider, list
 
-    how do i make the search bar work for several different things not just name such as brand, actor? im trying to set up conditionals. i prefer this over dropdown but not oppossed to learning how to do that either.
-
-    work on quiz, what components would i need, i worked on a quiz form,
+all example code ive found is either outdated or just wants you to download a premade quiz and plug stuff in
