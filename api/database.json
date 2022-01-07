@@ -79,7 +79,7 @@
     {
       "id": 1,
       "taste_notes": "Woody",
-      "flavorImages": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/00/Bowmore_whisky_12_years.JPG/800px-Bowmore_whisky_12_years.JPG"
+      "flavorImages": "https://www.tasteofhome.com/wp-content/uploads/2019/08/bottles-of-scotch-whiskey-on-shelf-shutterstock_283026071.jpg?fit=700,800"
     },
     {
       "id": 2,
@@ -89,22 +89,22 @@
     {
       "id": 3,
       "taste_notes": "Earthy",
-      "flavorImages": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/Amanita_muscaria_%28fly_agaric%29.JPG/220px-Amanita_muscaria_%28fly_agaric%29.JPG"
+      "flavorImages": "https://images.squarespace-cdn.com/content/v1/5af385b9b1059830d8044580/1568929966284-FNR1LR233FJ67H8M9S21/cooking-different-types-of-mushrooms-hero.jpg?format=1000w"
     },
     {
       "id": 4,
       "taste_notes": "Fruity",
-      "flavorImages": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Blackberryraspberrystrawberry.jpg/800px-Blackberryraspberrystrawberry.jpg"
+      "flavorImages": "https://www.healthyeating.org/images/default-source/home-0.0/nutrition-topics-2.0/general-nutrition-wellness/2-2-2-3foodgroups_fruits_detailfeature.jpg?sfvrsn=64942d53_4"
     },
     {
       "id": 5,
       "taste_notes": "Nutty",
-      "flavorImages": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/63/Common-nuts.png/290px-Common-nuts.png"
+      "flavorImages": "https://assets.bonappetit.com/photos/5d8b6f2a0a6e97000999a820/5:4/w_1570,h_1256,c_limit/Basically-Nuts-Macro.jpg"
     },
     {
       "id": 6,
       "taste_notes": "Smokey",
-      "flavorImages": "https://morningchores.com/wp-content/uploads/2017/11/smoker-whole-chicken-600x450.jpg"
+      "flavorImages": "http://www.cooking-outdoors.com/wp-content/uploads/2013/07/Smoker-with-Food.jpg"
     }
   ],
   "actorRatings": [
@@ -121,17 +121,17 @@
     {
       "id": 3,
       "actorName": "Steven Seagal",
-      "url": "https://upload.wikimedia.org/wikipedia/commons/d/d9/Steven_Seagal_November_2016.jpg"
+      "url": "https://styles.redditmedia.com/t5_59h0ls/styles/profileIcon_m4ns5c3utow71.jpg?width=256&height=256&crop=256:256,smart&s=d846ca75d46642be5431e501363ec45447a9c124"
     },
     {
       "id": 4,
       "actorName": "Tom Hanks",
-      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Tom_Hanks_TIFF_2019.jpg/1024px-Tom_Hanks_TIFF_2019.jpg"
+      "url": "https://pbs.twimg.com/profile_images/651929247343353856/WytyIXtl_400x400.jpg"
     },
     {
       "id": 5,
       "actorName": "Gwyneth Paltrow",
-      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/Gwyneth_Paltrow_avp_Iron_Man_3_Paris.jpg/330px-Gwyneth_Paltrow_avp_Iron_Man_3_Paris.jpg"
+      "url": "https://www.stylist.co.uk/images/app/uploads/2021/09/23114055/goops-gwyneth-paltrow-on-netflix-crop-1632393765-1024x1024.jpg?w=256&h=256&fit=max&auto=format%2Ccompress"
     }
   ]
 }

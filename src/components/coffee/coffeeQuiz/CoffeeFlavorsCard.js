@@ -1,8 +1,9 @@
 import React from "react";
 import { grommet, Card, Box, Heading, Button } from "grommet";
+import "./coffeeQuizStyling.css"
 
 
-export const CoffeeFlavorsCard = ({coffeeFlavors}) => {
+export const CoffeeFlavorsCard = ({coffeeFlavors, functionToChangeCoffeeFlavorsState}) => {
     if (coffeeFlavors.userId === +localStorage.activeUser){
     }
 
@@ -12,12 +13,12 @@ export const CoffeeFlavorsCard = ({coffeeFlavors}) => {
       return(
   
     
-    <div className="buzzRoastBox">
-        <Card width="large" height="medium" margin="medium">
-            <h2 class="quiz-question">Q1: Which flavor do you prefer? </h2>
+    <div>
+        <div>
+            <h2 className="quiz-question">Q1: Which flavor do you prefer? </h2>
 
-            <div class="quiz-answer" ><img alt="different coffee roast types" src={coffeeFlavors.flavorImages}/></div>
-        </Card>
+            <div><img alt="different flavors of food"  onClick={() => functionToChangeCoffeeFlavorsState(coffeeFlavors)} src={coffeeFlavors.flavorImages}/></div>
+        </div>
     </div>
       )
   }
