@@ -6,6 +6,7 @@ import { CoffeeTypesContext } from "../../coffeeTypes/CoffeeTypesProvider";
 import { CoffeeCard } from "./CoffeeCard";
 import { useNavigate } from "react-router-dom"
 import { grommet, Button, Box } from "grommet";
+import "./BrewReview.css"
 
 
 export const CoffeeList = () => {

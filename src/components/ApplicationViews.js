@@ -8,8 +8,9 @@ import { CoffeeFilter } from "./coffee/CoffeeFilter";
 import { CoffeeTypesProvider } from "../coffeeTypes/CoffeeTypesProvider";
 import { FlavorsProvider } from "../flavor/FlavorsProvider";
 import { ActorRatingsProvider } from "../actorRatings/actorRatingsProvider";
-import { CoffeeQuizzesProvider } from "./coffee/coffeeQuiz/CoffeeQuizzesProvider";
-import { CoffeeQuiz } from "./coffee/coffeeQuiz/CoffeeQuiz";
+import { CoffeeQuizzesProvider } from "./coffee/CoffeeQuizzesProvider";
+import { CoffeeQuiz } from "./coffee/CoffeeQuiz";
+
 
 
 

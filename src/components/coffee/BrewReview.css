@@ -66,3 +66,11 @@ body{
     justify-content: center;
     flex-wrap: wrap;
 }
+
+.highlighted{
+    border: #FFF275 10px solid;
+}
+
+
+
+

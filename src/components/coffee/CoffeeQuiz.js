@@ -1,15 +1,16 @@
 import React, { useContext, useEffect, useState, } from "react";
-import { CoffeeTypesContext } from "../../../coffeeTypes/CoffeeTypesProvider";
-import { FlavorsContext } from "../../../flavor/FlavorsProvider";
-import { ActorRatingsContext } from "../../../actorRatings/actorRatingsProvider";
+import { CoffeeTypesContext } from "../../coffeeTypes/CoffeeTypesProvider";
+import { FlavorsContext } from "../../flavor/FlavorsProvider";
+import { ActorRatingsContext } from "../../actorRatings/actorRatingsProvider";
 import { grommet, Button, Card } from "grommet";
 import { CoffeeTypesCard } from "./CoffeeQuizCard";
 import { CoffeeFlavorsCard } from "./CoffeeFlavorsCard";
 import { ActorRatingsCard } from "./CoffeeActorsCard";
 import { CoffeeQuizzesContext } from "./CoffeeQuizzesProvider";
-import "./coffeeQuizStyling.css"
+import "./BrewReview.css"
 import { useNavigate, useParams }  from 'react-router-dom';
-import { CoffeeContext} from  "../CoffeeProvider"
+import { CoffeeContext} from  "./CoffeeProvider"
+import { CoffeeCard } from "./CoffeeCard";
 
 //this is the coffeetypescard
 export const CoffeeQuiz = () => {
@@ -26,47 +27,44 @@ export const CoffeeQuiz = () => {
 
  const [selectedActor, setSelectedActors] = useState({})
 
- const [quizResult, setQuizResult] = useState({})
+ const [quizResult, setQuizResults] = useState({})
   
- const navigate = useNavigate();
+ 
 
 // on clicking the button show or navigate to the matching coffee review of the flavor.id
 useEffect(() => {
-  getCoffeeTypes()
+  getCoffee()
+  .then(getCoffeeTypes)
   .then(getFlavors)
   .then(getActorRatings)
 }, [])
 
-
-// const quizResults = () => {
-
-// }
 
  const displayAnswerHandle = () => {
    if (selectedFlavors.id === undefined) {
     window.alert("Please click on your choices")
 
    } else {
-    //  quizResults.find(coffee.id)
-     setQuizResult(selectedFlavors.id)
-   
+      const coffeeResult = coffee.find(c => c.flavorsId === +selectedFlavors.id)
+      setQuizResults(coffeeResult)
+      console.log(selectedFlavors.id, coffeeResult)  
  }
- 
  }
 
-  
-  
+ 
 
     return(
 
     <section>
-      <div>
-        
+
+      <div className="coffeeQuiz">
+
         {coffeeTypes.map(type => {
+          console.log(type, selectedCoffeeType, type.id === selectedCoffeeType.id)
           if(type.id === selectedCoffeeType.id){
-            return <CoffeeTypesCard key={type.id} className="highlightedCoffeeSelection" functionToChangeCoffeeTypeState={setSelectedCoffeeType} coffeeTypes={type} /> 
+            return <CoffeeTypesCard key={type.id}  functionToChangeCoffeeTypeState={setSelectedCoffeeType} coffeeTypes={type} highlighted={true} /> 
           } else {
-            return <CoffeeTypesCard key={type.id} functionToChangeCoffeeTypeState={setSelectedCoffeeType} coffeeTypes={type} /> 
+            return <CoffeeTypesCard key={type.id} functionToChangeCoffeeTypeState={setSelectedCoffeeType} coffeeTypes={type} highlighted={false} /> 
 
           }
           
@@ -74,7 +72,7 @@ useEffect(() => {
         }
       </div>
 
-    <div className="coffeeFlavors">
+    <div className="coffeeQuiz">
 
       {flavors.map(coffeeFlavor => {
         if(coffeeFlavor.id === selectedFlavors.id){
@@ -86,7 +84,8 @@ useEffect(() => {
     }
     </div>
 
-      <div className="coffeeActors">
+      <div className="coffeeQuiz">
+
       {actorRatings.map(actors => {
         if(actors.id === selectedActor.id){
         return <ActorRatingsCard key={actors.id} actors={actors} className="highlightedCoffeeSelection"
@@ -98,8 +97,19 @@ useEffect(() => {
       })
       }
       </div>
-      <Button className="resultsButton" onClick={displayAnswerHandle}  >Show Quiz Results</Button>
+      <Button className="resultsButton" onClick={displayAnswerHandle}
+      >Show Quiz Results</Button>      
+          {quizResult.id !== undefined? <h2>{quizResult.name}</h2> : <></>}
     </section>
 
     )
 }
+
+
+// condition ? optionIfTrue : optionIfFalse
+
+// if(condition){
+//   optionIfTrue
+// } else {
+//   optionIfFalse
+// }
