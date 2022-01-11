@@ -11,13 +11,13 @@ export const CoffeeTypesCard = ({ coffeeTypes, functionToChangeCoffeeTypeState, 
 
     return (
         <>
-        <h2 className="quiz-question">Q1: Which coffee roast do you prefer?</h2>
-            <div>
+        <div className="quizBox">
+            
                 <div>
                     <div className="quiz-answer"><img alt="different coffee roast types" height="400px" width="400px" className={highlighted === true ? "highlighted" : "normal-image"} onClick={() => functionToChangeCoffeeTypeState(coffeeTypes)}
                         src={coffeeTypes.typeImage} /></div>
                 </div>
-            </div>
+        </div>
         </>
     )
 }

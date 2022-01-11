@@ -5,17 +5,16 @@ import "./BrewReview.css"
 
 
 
-export const ActorRatingsCard = ({actors, functionToChangeActorState, highlighted}) => {
+export const ActorRatingsCard = ({actors, functionToChangeActorState, famousStyle}) => {
     if (actors.userId === +localStorage.activeUser){
     }
 
       return(
   
     <div>
-        <div>
-            <h2 className="quiz-question">Q1: Which actor is your favorite out of this group? </h2>
+        <div className="quizBox">
 
-            <div className="quiz-answer" ><img alt="different coffee roast types" className={highlighted === true ? "highlighted" : "normal-image"} onClick={() => functionToChangeActorState(actors)}   src={actors.url}/></div>
+            <div className="quiz-answer" ><img alt="different coffee roast types" className={ famousStyle === true ? " famousStyle" : "normal-image"} onClick={() => functionToChangeActorState(actors)}   src={actors.url}/></div>
         </div>
     </div>
       )

@@ -57,6 +57,7 @@ useEffect(() => {
 
     <section>
 
+      <h2 className="coffeeRoastTitle">What is your favorite type of coffee roast?</h2>
       <div className="coffeeQuiz">
 
         {coffeeTypes.map(type => {
@@ -73,7 +74,7 @@ useEffect(() => {
       </div>
 
     <div className="coffeeQuiz">
-
+        <h2 className="coffeeFlavorTitle">Which of the following flavors do you enjoy the most?</h2>
       {flavors.map(coffeeFlavor => {
         if(coffeeFlavor.id === selectedFlavors.id){
         return <CoffeeFlavorsCard key={coffeeFlavor.id} className="highlightedCoffeeSelection" functionToChangeCoffeeFlavorsState={setSelectedFlavors} coffeeFlavors={coffeeFlavor} />
@@ -85,7 +86,7 @@ useEffect(() => {
     </div>
 
       <div className="coffeeQuiz">
-
+        <h2 className="coffeeActorTitle">Which of the following is your favorite actor or actress?</h2>
       {actorRatings.map(actors => {
         if(actors.id === selectedActor.id){
         return <ActorRatingsCard key={actors.id} actors={actors} className="highlightedCoffeeSelection"
@@ -99,7 +100,7 @@ useEffect(() => {
       </div>
       <Button className="resultsButton" onClick={displayAnswerHandle}
       >Show Quiz Results</Button>      
-          {quizResult.id !== undefined? <h2>{quizResult.name}</h2> : <></>}
+          {quizResult.id !== undefined? <h2 className="quizResultsStyling">{quizResult.name}</h2> : <></>}
     </section>
 
     )
