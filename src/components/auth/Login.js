@@ -45,14 +45,15 @@ export const Login = (props) => {
 
             <Box align="center" justify="center" direction="column" fill="horizontal" flex pad="large" margin="large" >
             <Card align="center" justify="center">
-            <section>
+            <CardBody align="center" justify="center">
                 <form className="form--login" onSubmit={handleLogin}>
-                    <Box background="url(https://images.unsplash.com/photo-1525480122447-64809d765ec4?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80)" align="center" justify="center" pad="small" margin="medium" >
+                    <Box background="url(https://images.unsplash.com/photo-1601477575180-b63bf1200d2a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80)" align="center" justify="center" pad="small" margin="medium" >
                     <Heading align="center" margin="xxsmall" textAlign="center" justify="center">Brew Review</Heading>
+
                     <h2 align="center" className="pleaseSignIn">Please sign in</h2>
                     
                     <fieldset className="emailAddressBox">
-                        <label htmlFor="inputEmail"> <h3 className="email">Email address</h3> </label>
+                        <label htmlFor="inputEmail"> <h3 className="email"></h3> </label>
                         <input ref={email} type="email"
                             id="email"
                             className="form-control"
@@ -64,12 +65,12 @@ export const Login = (props) => {
                     </fieldset>
                     </Box>
                 </form>
-            </section>
+            </CardBody>
             
             <CardFooter textAlign="center">
-            <section className="link--register">
+            
                 <Link to="/register"><h3>Not a member yet?</h3></Link>
-            </section>
+            
             </CardFooter>
             </Card>
             </Box>

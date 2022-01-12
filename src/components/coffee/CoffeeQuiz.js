@@ -55,7 +55,7 @@ useEffect(() => {
 
     return(
 
-    <section>
+    <section className="sectionQuiz">
 
       <h2 className="coffeeRoastTitle">What is your favorite type of coffee roast?</h2>
       <div className="coffeeQuiz">
@@ -77,9 +77,9 @@ useEffect(() => {
         <h2 className="coffeeFlavorTitle">Which of the following flavors do you enjoy the most?</h2>
       {flavors.map(coffeeFlavor => {
         if(coffeeFlavor.id === selectedFlavors.id){
-        return <CoffeeFlavorsCard key={coffeeFlavor.id} className="highlightedCoffeeSelection" functionToChangeCoffeeFlavorsState={setSelectedFlavors} coffeeFlavors={coffeeFlavor} />
+        return <CoffeeFlavorsCard key={coffeeFlavor.id} className="highlightedCoffeeSelection" functionToChangeCoffeeFlavorsState={setSelectedFlavors} coffeeFlavors={coffeeFlavor} highlighted={true}/>
       } else {
-      return <CoffeeFlavorsCard key={coffeeFlavor.id} functionToChangeCoffeeFlavorsState={setSelectedFlavors} coffeeFlavors={coffeeFlavor} />
+      return <CoffeeFlavorsCard key={coffeeFlavor.id} functionToChangeCoffeeFlavorsState={setSelectedFlavors} coffeeFlavors={coffeeFlavor} highlighted={false} />
       }
     })
     }
@@ -90,18 +90,19 @@ useEffect(() => {
       {actorRatings.map(actors => {
         if(actors.id === selectedActor.id){
         return <ActorRatingsCard key={actors.id} actors={actors} className="highlightedCoffeeSelection"
-        functionToChangeActorState={setSelectedActors} />
+        functionToChangeActorState={setSelectedActors} highlighted={true} />
       } else {
         return <ActorRatingsCard key={actors.id} actors={actors} 
-        functionToChangeActorState={setSelectedActors} />
+        functionToChangeActorState={setSelectedActors} highlighted={false} />
       }
       })
       }
       </div>
-      <Button className="resultsButton" onClick={displayAnswerHandle}
+      <Button plain="" color="#481D24"  alignSelf="center" className="resultsButton" onClick={displayAnswerHandle}
       >Show Quiz Results</Button>      
           {quizResult.id !== undefined? <h2 className="quizResultsStyling">{quizResult.name}</h2> : <></>}
     </section>
+
 
     )
 }

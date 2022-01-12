@@ -9,7 +9,7 @@ export const CoffeeCard = ({ coffee }) => {
     }
     return (
 <div className="coffeeCard">
-    <Box className="coffeeNameTitle" align="center" direction="row" justify="center" pad="small">
+    <Box className="coffeeNameTitle" margin="medium" align="center" direction="row" justify="center" pad="small">
         <Card background="#FCEFEE" width="medium" height="400px"
             border={{color: '#481D24', size: 'medium'}} pad="small">
             <CardHeader align="center" justify="center" className="coffee-review"><Link to={`/coffee/detail/${coffee.id}`}><h2>Coffee Name:  {coffee.name}</h2>

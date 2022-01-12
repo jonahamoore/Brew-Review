@@ -5,7 +5,7 @@ import "./BrewReview.css"
 
 
 
-export const ActorRatingsCard = ({actors, functionToChangeActorState, famousStyle}) => {
+export const ActorRatingsCard = ({actors, functionToChangeActorState, highlighted}) => {
     if (actors.userId === +localStorage.activeUser){
     }
 
@@ -14,7 +14,7 @@ export const ActorRatingsCard = ({actors, functionToChangeActorState, famousStyl
     <div>
         <div className="quizBox">
 
-            <div className="quiz-answer" ><img alt="different coffee roast types" className={ famousStyle === true ? " famousStyle" : "normal-image"} onClick={() => functionToChangeActorState(actors)}   src={actors.url}/></div>
+            <div className="quiz-answer" ><img alt="different coffee roast types" height="400px" width="400px" className={ highlighted === true ? "highlighted" : "normal-image"} onClick={() => functionToChangeActorState(actors)}   src={actors.url}/></div>
         </div>
     </div>
       )

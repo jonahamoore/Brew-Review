@@ -17,12 +17,23 @@ body{
     float: left;
 }
 
+.form-control{
+    width: 10%;
+    padding: 5%;
+}
+
+.form-group{
+    width: 90%;
+    margin: 5%;
+}
+
 .input--wide{
     margin: 15px;
 }
 
 .Coffee-Title{
     text-align: center;
+    font-size: 3em;
 }
 
 .coffeeBrand{
@@ -104,7 +115,7 @@ body{
 
 .quizResultsStyling{
 text-align: center;
-
+font-size: 5em;
 }
 
 .coffeeRoastTitle{
@@ -124,4 +135,14 @@ text-align: center;
     display: flex;
     flex-direction: column;
     justify-content: center;
+}
+
+.normal-image{
+    display: flex;
+    border: 
+}
+
+.sectionQuiz{
+    justify-content: center;
+    text-align: center;
 }

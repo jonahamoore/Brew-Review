@@ -94,7 +94,7 @@ export const CoffeeForm = () => {
     <div className="editFormCard">
     <Card width="medium">
         <form className="coffeeForm">
-          <Heading align="center" justify="center" className="coffee__title">New Coffee Review</Heading>
+          <Heading align="center" justify="center" margin="medium" className="coffee__title">New Coffee Review</Heading>
 
           <fieldset>
                 <div className="form-group">
@@ -106,7 +106,7 @@ export const CoffeeForm = () => {
             <fieldset>
                 <div className="form-group">
                     <label htmlFor="coffeeBrand"><h3>Coffee brand:</h3> </label>
-                    <input type="text" name="brand" onChange={handleControlledInputChange} required autoFocus className="form-control" placeholder="Brand of coffee" defaultValue={coffee.brand}/>
+                    <input type="text" name="brand" onChange={handleControlledInputChange} className="form-control" placeholder="Brand of coffee" defaultValue={coffee.brand}/>
                 </div>
             </fieldset>
 
@@ -156,14 +156,14 @@ export const CoffeeForm = () => {
             <fieldset>
                 <div className="form-group">
                     <label htmlFor="actorUrl"><h3>Url of image here:</h3> </label>
-                    <input type="text" name="url" onChange={handleControlledInputChange} required autoFocus className="form-control" placeholder="Image address here" defaultValue={coffee.actorRatings.url}/>
+                    <input type="text" name="url" onChange={handleControlledInputChange}  className="form-control" placeholder="Image address here" defaultValue={coffee.actorRatings.url}/>
                 </div>
             </fieldset>
 
             <fieldset>
                 <div className="form-group">
                     <label htmlFor="coffeeDescription"><h3>Coffee description:</h3> </label>
-                    <input type="text" name="description" onChange={handleControlledInputChange} required autoFocus className="form-control" placeholder="Compare actor to coffee here" defaultValue={coffee.description}/>
+                    <input type="text" name="description" onChange={handleControlledInputChange}  className="form-control" placeholder="Compare actor to coffee here" defaultValue={coffee.description}/>
                 </div>
             </fieldset>
 
